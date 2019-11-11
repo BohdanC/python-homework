@@ -1,0 +1,19 @@
+stop = ' '
+while stop != 'stop':
+    import re
+    def do_input_float(message):
+        flag = True
+        while flag:
+            value = input(message)
+            if bool(re.match('^[-+]?[0-9]{1,}(\.[0-9]{1,})?$', value)):
+                flag = False
+                value = float(value)
+            else:
+                print('error')
+        return value
+    x=do_input_float("Введіть значення х:")
+    if x >=7:
+        print("-x**2="+str((-x**2)))
+    else :
+        print("(2**-x)/(x**2-9)="+str((2**-x)/(x**2-9)))
+    stop=input("stop maybe?")
