@@ -1,0 +1,31 @@
+stop =' '
+while stop!='stop':
+    from math import sqrt
+    import re
+
+
+    def do_input_float(message):
+        flag = True
+        while flag:
+            value = input(message)
+            if bool(re.match('^[-+]?[0-9]{1,}(\.[0-9]{1,})?$', value)):
+                flag = False
+                value = float(value)
+            else:
+                print('error')
+        return value
+
+
+    a = do_input_float("Введіть значення A")
+    b = do_input_float("Введіть значення B")
+    c = do_input_float("Введіть значення C")
+
+    dist1 = sqrt((b - a) ** 2)
+    dist2 = sqrt((c - a) ** 2)
+    if dist1 > dist2:
+        print("C ближче до A, ніж B")
+    if dist2 > dist1:
+        print("B ближче до A, ніж C")
+    if dist1 == dist2:
+        print("C на такій же відстані до A, як і B")
+    stop=input("Натисніть любу клавішу для продовження або  пропишіть stop для зупинки")
