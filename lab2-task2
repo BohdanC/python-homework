@@ -1,0 +1,28 @@
+import re
+print("""Чух Богдан Володимирович
+Група КМ-94
+Лабораторна  робота №2 Варіант 23
+Виведення числа \n""")
+stop = ' '
+while stop != 'stop':
+    def do_input_int(message):
+        flag = True
+        while flag:
+            value = input(message)
+            if bool(re.match('^[0-9]{1,}$', value)):
+                flag = False
+                value = int(value)
+            else:
+                print('error')
+        return value
+
+
+    a = do_input_int("Введіть додатнє значення А")
+    k = 0
+    s = 0
+    while a > s + 1 / (k + 1):
+        s = s + 1 / (k + 1)
+        k = k + 1
+    print("Найбільше К=" + str(k))
+    print("Сума менша за А=" + str(s))
+    stop=input("Do u wanna stop?")
