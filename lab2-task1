@@ -1,0 +1,29 @@
+import re
+print("""Чух Богдан Володимирович
+Група КМ-94
+Лабораторна  робота №2 Варіант 23
+Обчислення виразу \n""")
+stop = ' '
+while stop != 'stop':
+    def do_input_int(message):
+        flag = True
+        while flag:
+            value = input(message)
+            if bool(re.match('^[0-9]{1,}$', value)):
+                flag = False
+                value = int(value)
+            else:
+                print('error')
+        return value
+
+
+    n = do_input_int("Введіть верхню межу суми")
+    x = do_input_int("Введіть значення х")
+
+    sum = 0
+    for i in range(0, n + 1):
+        sum += ((n * x - 1) ** i) / (x - n)
+    print("Відповідь")
+    print(sum)
+    stop = input("Do u wanna stop?")
+
