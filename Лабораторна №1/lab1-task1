@@ -1,0 +1,10 @@
+import re
+result1 = re.sub(r'a','2','(a+4*b)*(a-3*b)+a**2')
+result2 = re.sub(r'b','3',result1)
+print(result2)
+
+a = 2
+b = 3
+formula = (a+4*b)*(a-3*b)+a**2
+
+print(formula)
